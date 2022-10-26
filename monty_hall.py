@@ -2,11 +2,10 @@
 import numpy as np
 import random
 wins=0
-switch='No'
-N=100000
+switch='Yes'
+N=1000
 chosen_door='a' #Choose the door in lower indices
 doors=['a','b','c']
-wins1=0
 M=N
 for i in range(N):
 	ran=random.randint(0,1) 			# ran=0 for Q1, ran=1 for Q2 and this current version for Q3.
@@ -37,12 +36,12 @@ for i in range(N):
 		if door_open!=car_door: 
 			if switch=='No':
 				if chosen_door==car_door:
-					wins1+=1
+					wins+=1
 			if switch=='Yes':
 				if unchosen_door[0]==car_door:
-					wins1+=1
+					wins+=1
 		if door_open==car_door:
 			M-=1
 		
-print(wins/N)
-print(wins1/M)
+print(wins/M)
+#print(wins1/M)
